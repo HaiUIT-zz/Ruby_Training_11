@@ -1,4 +1,6 @@
 Documentation:
   Enabled: false
-Style/EndOfLine:
+Layout/EndOfLine:
   EnforcedStyle: lf
+Style/SymbolArray:
+  Enabled: false
