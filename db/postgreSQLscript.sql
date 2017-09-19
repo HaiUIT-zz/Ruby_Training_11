@@ -14,7 +14,8 @@ CREATE TABLE "books" (
 
 
 CREATE TABLE "users" (
-	"id" serial(20) NOT NULL,
+	"id" serial NOT NULL,
+	"user_id" serial(20) NOT NULL,
 	"password" varchar(60) NOT NULL,
 	"name" varchar(50) NOT NULL,
 	"email" varchar(50) NOT NULL,
@@ -78,7 +79,7 @@ CREATE TABLE "roles_permissions" (
 
 
 
-ALTER TABLE "books" ADD CONSTRAINT "books_fk0" FOREIGN KEY ("user_id") REFERENCES "users"("id");
+ALTER TABLE "books" ADD CONSTRAINT "books_fk0" FOREIGN KEY ("user_id") REFERENCES "users"("user_id");
 
 ALTER TABLE "users" ADD CONSTRAINT "users_fk0" FOREIGN KEY ("role_id") REFERENCES "roles"("id");
 
