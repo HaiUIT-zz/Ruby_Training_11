@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   has_and_belongs_to_many :subjects
-  belong_to :user
+  belongs_to :user
 
   validates :title, :author, :first_published, :user_id, :created_on, :is_deleted, presence: true
   validates :title, :author, length: { maximum: 50 }
