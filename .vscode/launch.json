@@ -19,7 +19,7 @@
       "cwd": "${workspaceRoot}",
       "remoteHost": "127.0.0.1",
       "remotePort": "1234",
-      "remoteWorkspaceRoot": "${workspaceRoot}"
+      "remoteWorkspaceRoot": "/mnt/d/Work/Ruby/Ruby_Training_11"
     },
     {
       "name": "Rails server",

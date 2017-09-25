@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  get 'book/list'
-  get 'book/new'
-  post 'book/create'
-  patch 'book/update'
-  get 'book/list'
-  get 'book/show'
-  get 'book/edit'
-  get 'book/delete'
-  get 'book/update'
+  resources :books
 
-  root 'book#list'
+  get 'books/index'
+  get 'books/new'
+  post 'books/create'
+  patch 'books/update'
+  get 'books/list'
+  get 'books/show'
+  get 'books/edit'
+  get 'books/delete'
+  get 'books/update'
+
+  root 'books#index'
 end

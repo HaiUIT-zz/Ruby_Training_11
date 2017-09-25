@@ -66,3 +66,9 @@ gem 'date_validator'
 
 # SBAdmin theme
 gem 'bootstrap_sb_admin_base_v2'
+
+# Ajax Datatable paging extension
+gem 'kaminari'
+
+# Ajax support for jquery Datatable
+gem 'ajax-datatables-rails'

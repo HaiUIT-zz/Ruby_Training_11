@@ -1,6 +1,9 @@
-class BookController < ApplicationController
-  def list
-    @books = Book.all
+class BooksController < ApplicationController
+  def index
+    respond_to do |format|
+      format.html
+      format.json { render json: BookDatatable.new(view_context) }
+    end
   end
 
   def show
