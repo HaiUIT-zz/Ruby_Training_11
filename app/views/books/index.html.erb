@@ -1,12 +1,31 @@
-<table id="books-table", data-source="<%= books_path(format: :json) %>">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Title</th>
-      <th>Author</th>
-      <th>First published</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+<div class="row">
+    <div class="page-header col-lg-12">
+        <div class="col-lg-6">
+            <h1>Books list</h1>
+        </div>
+        <div class "col-lg-6">
+            <h1 class="pull-right">
+                <button type="button" class="btn btn-primary"><i class="fa fa-fw fa-plus" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-primary"><i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-primary"><i class="fa fa-fw fa-trash" aria-hidden="true"></i></button>
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <table id="books-table" class="table table-bordered table-hover table-striped", data-source="<%= books_path(format: :json) %>">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>First published</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+    </div>
+</div>
