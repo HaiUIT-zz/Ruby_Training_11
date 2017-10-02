@@ -72,3 +72,6 @@ gem 'kaminari'
 
 # Ajax support for jquery Datatable
 gem 'ajax-datatables-rails'
+
+# Datepicker
+gem 'bootstrap-datepicker-rails'

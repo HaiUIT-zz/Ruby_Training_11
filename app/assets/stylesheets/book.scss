@@ -10,3 +10,11 @@ $back_cl: #91E642;
 	color: $white;
 	background-color: $back_cl !important;
 }
+
+.form-horizontal .control-label {
+	text-align:left;
+}
+
+a:visited .btn-link {
+	color: inherit;
+}

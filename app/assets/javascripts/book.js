@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   var table = $('#books-table').DataTable({
     'processing': true,
     'serverSide': true,
@@ -23,18 +24,20 @@ $(document).ready(function () {
           table.search(this.value).draw();
         }
       });
-    }
+    },
+    'destroy': true
   });
 
-  $('#books-table tbody').on('click', 'tr', function ()
-  {
-    if ($(this).hasClass('selected'))
-    {
+  $('#books-table tbody').on('click', 'tr', function () {
+    if ($(this).hasClass('selected')) {
       $(this).removeClass('selected');
-    } else
-    {
+    } else {
       table.$('tr.selected').removeClass('selected');
       $(this).addClass('selected');
     }
   });
-})
+
+  $('#books-first-published').datepicker({
+    format: "dd/mm/yyyy"
+  });
+});

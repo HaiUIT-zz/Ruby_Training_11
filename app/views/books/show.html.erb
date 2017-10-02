@@ -1,44 +1,32 @@
-<div class="row pull-left col-lg-12">
+<div class="row col-lg-12">
   <form class="form-horizontal">
     <fieldset>
 
-    <!-- Form Name -->
     <legend>Book details</legend>
 
-    <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="textinput">Title</label>  
-      <div class="col-md-4">
-      <input id="textinput" name="textinput" placeholder="" class="form-control input-md" required="" type="text">
-        
-      </div>
+      <strong class="col-md-2">Title : </strong>  
+      <div class="col-md-2"><%= @book.title %></div>
     </div>
 
-    <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="textinput">Author</label>  
-      <div class="col-md-4">
-      <input id="textinput" name="textinput" placeholder="" class="form-control input-md" required="" type="text">
-        
-      </div>
+      <strong class="col-md-2">Author : </strong>  
+      <div class="col-md-2"><%= @book.author %></div>
     </div>
 
-    <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="">First published</label>  
-      <div class="col-md-4">
-      <input id="" name="" placeholder="" class="form-control input-md" type="text">
-        
-      </div>
+      <strong class="col-md-2">Subjects : </strong>  
+      <div class="col-md-2"><%= @book.subjects_to_s %></div>
     </div>
 
-    <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="">Uploader</label>  
-      <div class="col-md-4">
-      <input id="" name="" placeholder="" class="form-control input-md" required="" type="text">
-        
-      </div>
+      <strong class="col-md-2">First published : </strong>  
+      <div class="col-md-2"><%= @book.first_published %></div>
+    </div>
+
+    <div class="form-group">
+      <strong class="col-md-2">Uploader : </strong>  
+      <div class="col-md-2"><%= @book.title %></div>
     </div>
 
     </fieldset>

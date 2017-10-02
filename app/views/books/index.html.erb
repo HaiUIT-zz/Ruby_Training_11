@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% end %>
+
 <div class="row">
     <div class="page-header col-lg-12">
         <div class="col-lg-6">
@@ -5,7 +9,7 @@
         </div>
         <div class "col-lg-6">
             <h1 class="pull-right">
-                <button type="button" class="btn btn-primary"><i class="fa fa-fw fa-plus" aria-hidden="true"></i></button>
+                <a href="/books/new"><button type="button" class="btn btn-primary"><i class="fa fa-fw fa-plus" aria-hidden="true"></i></button></a>
                 <button type="button" class="btn btn-primary"><i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i></button>
                 <button type="button" class="btn btn-primary"><i class="fa fa-fw fa-trash" aria-hidden="true"></i></button>
             </h1>

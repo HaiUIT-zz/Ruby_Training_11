@@ -22,3 +22,5 @@ Layout/TrailingWhitespace:
   Enabled: false
 Layout/IndentationWidth:
   Enabled: false
+Naming/AccessorMethodName:
+  Enabled: false

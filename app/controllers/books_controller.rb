@@ -12,16 +12,17 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    @subjects = Subject.all
   end
 
   def create
     @book = Book.new(book_params)
+    @book.user_id = 1
+    @book.created_on = Time.current
+    @book.is_deleted = false
 
     if @book.save
-      redirect_to action: 'list'
+      redirect_to action: 'index'
     else
-      @subjects = Subject.all
       render action: 'new'
     end
   end
@@ -43,12 +44,12 @@ class BooksController < ApplicationController
     
   def delete
     Book.find(params[:id]).destroy
-    redirect_to action: 'list'
+    redirect_to action: 'index'
   end
 
   private
 
   def book_params
-    params.require(:books).permit(:title, :author, :user_id, :first_published, :create_on)
+    params.require(:books).permit(:title, :author, :first_published, subject_ids: [])
   end
 end

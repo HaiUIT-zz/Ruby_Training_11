@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>RubyTraining11</title>
+    <% if content_for?(:head) %>
+        <%= yield(:head) %>
+    <% end %>
     <%= csrf_meta_tags %>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -50,7 +53,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#"><i class="fa fa-book fa-fw"></i> Books Management</span></a>
+                            <a href="/books"><i class="fa fa-book fa-fw"></i> Books Management</span></a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> Users Management</a>
