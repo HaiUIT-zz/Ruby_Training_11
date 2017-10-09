@@ -34,7 +34,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
 
-    if @book.update_attributes(book_param)
+    if @book.update_attributes(book_params)
       redirect_to action: 'show', id: @book
     else
       @subjects = Subject.all
@@ -42,14 +42,18 @@ class BooksController < ApplicationController
     end
   end
     
-  def delete
-    Book.find(params[:id]).destroy
-    redirect_to action: 'index'
+  def destroy
+    @book = Book.find(params[:id])
+    if @book.update_attributes(is_deleted: true)
+      render json: { success: true }
+    else
+      render json: { success: false }
+    end
   end
 
   private
 
   def book_params
-    params.require(:books).permit(:title, :author, :first_published, subject_ids: [])
+    params.require(:book).permit(:title, :author, :first_published, subject_ids: [])
   end
 end

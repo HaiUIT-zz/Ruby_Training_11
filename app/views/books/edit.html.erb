@@ -1,0 +1,40 @@
+<div class="row col-lg-12">
+  <%= form_for @book, url: {action: "update", id: @book}, html: { class: 'form-horizontal' } do |f| %>
+    <fieldset>
+
+    <legend>Update book : <%= @book.title %></legend>
+
+    <div class="form-group"> 
+      <%= label :book, :title, "Title: ", class: "col-md-2 control-label" %>
+      <div class="col-md-4 input-group">
+        <%= f.text_field :title, {class: "form-control input-md", required: true} %>
+      </div>
+    </div>
+
+    <div class="form-group">  
+      <%= label :book, :author, "Author : ", class: "col-md-2 control-label" %>
+      <div class="col-md-4 input-group">
+        <%= f.text_field :author, {class: "form-control input-md", required: true} %>
+      </div>
+    </div>
+
+    <div class="form-group">  
+      <%= label :book, :subject_ids, "Subjects : ", class: "col-md-2 control-label" %>
+      <div class="col-md-2 input-group">
+        <%= f.select:subject_ids, Subject.all.collect {|s| [ s.title, s.id ] }, {}, { multiple: true, size: 6, class: 'form-control', required: true} %>
+      </div>
+    </div>
+
+    <div class="form-group"> 
+      <%= label :book, :subject_ids, "First published : ", class: "col-md-2 control-label" %>
+      <div class="col-md-2 input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <%= f.text_field :first_published, {class: "datepicker form-control input-md", required: true, value: @book.first_published.strftime("%d/%m/%Y"), id: "book-first-published"} %>
+      </div>
+    </div>
+
+    <%= submit_tag("Save", class: "btn btn-primary") %>
+
+    </fieldset>
+    <% end -%>
+</div>

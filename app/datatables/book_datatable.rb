@@ -22,6 +22,6 @@ class BookDatatable < AjaxDatatablesRails::Base
   end
 
   def get_raw_records
-    Book.all
+    Book.where(is_deleted: false)
   end
 end

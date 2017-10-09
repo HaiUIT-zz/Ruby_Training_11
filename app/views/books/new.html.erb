@@ -5,31 +5,31 @@
     <legend>Create a new book</legend>
 
     <div class="form-group"> 
-      <%= label :books, :title, "Title: ", class: "col-md-2 control-label" %>
+      <%= label :book, :title, "Title: ", class: "col-md-2 control-label" %>
       <div class="col-md-4 input-group">
-        <%= text_field :books, :title, {class: "form-control input-md", required: true} %>
+        <%= text_field :book, :title, {class: "form-control input-md", required: true} %>
       </div>
     </div>
 
     <div class="form-group">  
-      <%= label :books, :author, "Author : ", class: "col-md-2 control-label" %>
+      <%= label :book, :author, "Author : ", class: "col-md-2 control-label" %>
       <div class="col-md-4 input-group">
-        <%= text_field :books, :author, {class: "form-control input-md", required: true} %>
+        <%= text_field :book, :author, {class: "form-control input-md", required: true} %>
       </div>
     </div>
 
     <div class="form-group">  
-      <%= label :books, :subject_ids, "Subjects : ", class: "col-md-2 control-label" %>
+      <%= label :book, :subject_ids, "Subjects : ", class: "col-md-2 control-label" %>
       <div class="col-md-2 input-group">
         <%= select_tag("books[subject_ids]", options_from_collection_for_select(Subject.all, 'id', 'title'), { multiple: true, size: 6, class: 'form-control', required: true} ) %>
       </div>
     </div>
 
     <div class="form-group"> 
-      <%= label :books, :subject_ids, "First published : ", class: "col-md-2 control-label" %>
+      <%= label :book, :first_published, "First published : ", class: "col-md-2 control-label" %>
       <div class="col-md-2 input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        <%= text_field :books, :first_published, {class: "datepicker form-control input-md", required: true} %>
+        <%= text_field :book, :first_published, {class: "datepicker form-control input-md", required: true, id: "book-first-published"} %>
       </div>
     </div>
 
