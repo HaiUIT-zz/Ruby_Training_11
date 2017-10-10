@@ -28,3 +28,7 @@ Rails/HasManyOrHasOneDependent:
   Enabled: false
 Layout/SpaceInsideBrackets:
   Enabled: false
+Style/BracesAroundHashParameters:
+  Enabled: false
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false

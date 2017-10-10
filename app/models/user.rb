@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
 
-  has_one :role
+  belongs_to :role
   has_many :books
   
   before_save :encrypt_password
@@ -16,8 +16,7 @@ class User < ApplicationRecord
   validates :email, email_format: true
 
   def encrypt_password
-    return unless password.present?
-
+    return if password.blank?
     BCrypt::Engine.cost = 12
     self.password = BCrypt::Password.create(password)
   end
@@ -28,11 +27,10 @@ class User < ApplicationRecord
 
   def self.authenticate(username_or_email = "", login_password = "")
     user = if EMAIL_REGEX.match(username_or_email)    
-             User.find_by_email(username_or_email)
+             User.find_by("email = ?", username_or_email)
            else
-             User.find_by_username(username_or_email)
+             User.find_by("user_id = ?", username_or_email)
            end
-
     if user && user.match_password(login_password)
       user
     else
@@ -41,15 +39,6 @@ class User < ApplicationRecord
   end
 
   def match_password(login_password = "")
-    test = BCrypt::Password.new(password)
-    test == login_password
-  end
-
-  def self.find_by_email(email)
-    User.where(["email = ?", email]).first
-  end
-
-  def self.find_by_username(user_name)
-    User.where(["user_id = ?", user_name]).first
+    BCrypt::Password.new(password) == login_password
   end
 end

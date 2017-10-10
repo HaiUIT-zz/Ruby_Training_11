@@ -3,7 +3,7 @@
 //= require jquery_ujs
 //= require bootstrap_sb_admin_base_v2
 //= require bootstrap-datepicker
-//= require_tree
+//= require bootstrap-dialog
 
 //GLOBAL JQuery Functaionality
 $(function(){

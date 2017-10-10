@@ -75,3 +75,9 @@ gem 'ajax-datatables-rails'
 
 # Datepicker
 gem 'bootstrap-datepicker-rails'
+
+# JSON web token ruby
+gem 'jwt'
+
+# Figaro app configuration
+gem "figaro" 

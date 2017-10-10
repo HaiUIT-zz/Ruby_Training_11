@@ -1,6 +1,6 @@
 class RolesPermissions < ActiveRecord::Migration[5.1]
   def self.up
-    create_table :roles_permissions, id: false do |t|
+    create_table :permissions_roles, id: false do |t|
       t.column :role_id, :integer, null: false
       t.column :permission_id, :integer, null: false
     end

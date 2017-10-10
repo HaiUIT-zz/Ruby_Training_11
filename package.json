@@ -1,5 +1,7 @@
 {
   "name": "Ruby_Training_11",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@types/jquery": "^3.2.13"
+  }
 }
