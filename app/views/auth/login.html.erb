@@ -36,7 +36,7 @@
                     </div>
 
                     <% flash.each do |key, value| %>
-                        <div class="alert alert-danger"><%= value %></div>
+                        <div class="alert alert-danger"><%= value[:msg] %></div>
                     <% end %>
 
                     <div style="margin-top:10px" class="form-group">

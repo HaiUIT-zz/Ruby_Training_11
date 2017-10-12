@@ -32,3 +32,7 @@ Style/BracesAroundHashParameters:
   Enabled: false
 Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
+Metrics/MethodLength:
+  Max: 20
+Metrics/AbcSize:
+  Max: 20
